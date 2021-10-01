@@ -20,6 +20,13 @@ import java.util.Random;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadLocalRandom;
 
+
+/**
+ * This is a mock class in case you don't have credentials from twitter to receive messages
+ * 
+ * @author Riccardo Bruno
+ * 
+ */
 @Component
 @ConditionalOnProperty(name = "twitter-to-kafka-service.enable-mock-tweets", havingValue = "true")
 public class MockKafkaStreamRunner implements StreamRunner {
