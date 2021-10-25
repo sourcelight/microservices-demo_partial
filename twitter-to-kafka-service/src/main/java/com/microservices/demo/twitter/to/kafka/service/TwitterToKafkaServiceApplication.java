@@ -2,8 +2,6 @@ package com.microservices.demo.twitter.to.kafka.service;
 
 import com.microservices.demo.twitter.to.kafka.service.init.StreamInitializer;
 import com.microservices.demo.twitter.to.kafka.service.runner.StreamRunner;
-
-import org.apache.kafka.common.utils.Exit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -26,14 +24,14 @@ public class TwitterToKafkaServiceApplication implements CommandLineRunner {
         this.streamInitializer = initializer;
     }
 
-    public static void main(String[] args) {    	
-        SpringApplication.run(TwitterToKafkaServiceApplication.class, args);       
+    public static void main(String[] args) {
+        SpringApplication.run(TwitterToKafkaServiceApplication.class, args);
     }
 
     @Override
     public void run(String... args) throws Exception {
-        LOG.info("App starts...");                
+        LOG.info("App starts...");
         streamInitializer.init();
-        streamRunner.start();       
+        streamRunner.start();
     }
 }
